@@ -23,7 +23,7 @@ bundle config --local cache_path '.bundle/cache'
 Then install, by running
 
 ```sh
-bunlde install -j 4
+bundle install -j 4
 ```
 
 ## Example use

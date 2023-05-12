@@ -38,3 +38,5 @@ web_lambda('calculate') do |a, b|
   "#{a.to_f + b.to_f}"
 end
 ```
+
+After running this code, you can check `http://localhost:4567/calculate`. Make sure you also install a handler like 'puma' or 'webrick'. 

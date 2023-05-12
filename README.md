@@ -43,7 +43,11 @@ After running this code, you can check `http://localhost:4567/calculate`. Make s
 
 ### Using erb templates
 
-You can use erb templates for the page with the form as follows.
+The block passed to web_lambda is passed to a Sinatra `post` action. 
+
+Therefore, you can essentially change how the result looks like however you like. 
+
+On the other hand, the options for the page where the form appears are currently limited. You can only use erb templates for the page with the form as follows.
 
 ```ruby
 require 'sinatra'

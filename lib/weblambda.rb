@@ -51,7 +51,8 @@ module Sinatra
       str
     end
 
-    def web_lambda(path, erb_template=nil, &job_block)
+    def web_lambda(path=nil, erb_template=nil, &job_block)
+      path = '' unless path
       input_path = get_input_path(path)
       result_path = get_result_path(path)
       form_str = form_page(path, &job_block)

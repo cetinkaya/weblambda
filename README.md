@@ -40,3 +40,52 @@ end
 ```
 
 After running this code, you can check `http://localhost:4567/calculate`. Make sure you also install a handler like 'puma' or 'webrick'. 
+
+### Using erb templates
+
+You can use erb templates for the page with the form as follows.
+
+```ruby
+require 'sinatra'
+require 'weblambda'
+
+web_lambda('calculate', erb_template=:template) do |a, b|
+  "#{a.to_f + b.to_f}"
+end
+```
+
+Here is an example `views/template.erb` file:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+#weblambda-form {
+  width: 800px;
+  margin: 0px auto;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-template-rows: auto auto;
+  margin-bottom: 10px;
+}
+
+.field label {
+  text-align: right;
+  margin-right: 10px;
+}
+
+input[type=submit] {
+ float: right;
+}
+</style>
+</head>
+<body>
+<%= yield %>
+</body>
+</html>
+```

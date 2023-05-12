@@ -33,7 +33,7 @@ module Sinatra
 
     def form_page(path, &job_block)
       action_path = get_action_path(path)
-      str = "<div id='webinput-form'><form method='post' action='#{action_path}'>"
+      str = "<div id='weblambda-form'><form method='post' action='#{action_path}'>"
       job_block.parameters.each do |param|
         param_name = param[1].to_s
         label_str = param_name

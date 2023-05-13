@@ -67,7 +67,7 @@ module Sinatra
       end
 
       post result_path do
-        job_block.call(*job_block.parameters.map{ |p| params[p[1]]})
+        self.instance_exec(*job_block.parameters.map{ |p| params[p[1]]}, &job_block)
       end
     end
   end
